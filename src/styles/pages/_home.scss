@@ -1,0 +1,1338 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.home {  
+  background-color: $grey-300;
+
+  .section-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 650px;
+    // background-color: $black;
+    background-image: url('../../assets/images/JPG/razer-nari-hero-desktop-wireless-gaming-headset CL.jpg');
+    // background-size: contain;
+
+    .banner-text {
+      position: relative;
+      top: -35px;
+      padding-left: 4px;
+      max-width: 570px;
+
+      .title-large {
+        text-transform: uppercase;
+        font-family: $font-montserrat-bold;
+      }
+    }
+    
+    .logo-holder {
+      position: absolute;
+      bottom: -127px;
+    }
+
+    .img-holder {
+      position: relative;
+      width: 100%;
+    }
+
+    .img-logo {
+      width: 91px;
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &-large {
+        position: absolute;
+        right: -50px;
+        bottom: -144px;
+        width: 269px;
+      }
+    }
+  }
+
+// Second title
+  .section-features {
+    background-color: $grey-300;
+    .title {
+      &-holder {
+        padding-top: 66px;
+        margin: 0 auto;
+        max-width: 663px;
+        text-align: center;
+      }
+
+      &-small {
+        font-family: $font-montserrat-bold;
+        text-transform: uppercase;
+        color: $brand-color;
+        margin-top: 4px;
+        margin-right: 0;
+        margin-bottom: 22px;
+        margin-left: 10px;
+      }
+    }
+
+    .text-content-small {
+      color: $grey-100;
+      font-size: 15px;
+      font-family: $font-montserrat-light;
+      // line-height: 200%;
+    }
+
+// Second Content 
+    .features-holder {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-top: 60px;
+      margin-left: 10px;
+      margin: 60px 2 0 2;
+
+      &:after {
+        content: '';
+
+        position: absolute;
+        bottom: 19px;
+        
+        width: 99%;
+        
+        border: .5px solid;
+      }
+      
+      .text-bold {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: $font-montserrat-bold;
+      }
+
+      .description {
+        color: $grey-100;
+        font-family: $font-montserrat-light;
+        // font-size: 15px;
+      }
+    }
+
+    .feature-wrapper {
+      flex: 0 0 33.33%;
+      padding: 0 5px;
+      // padding-left: 3px;
+      margin-bottom: 52px;
+      max-width: 28%;
+    }
+
+    .icon-features {
+      margin-bottom: 9px;
+      width: 40px;
+    }
+  }
+
+  .section-products {
+    padding-top: 6px;
+
+    .title-small {
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 30px;
+      margin-left: 16px;
+      margin-left: 2px
+    }
+
+    .swiper {
+      &-container {
+        margin-top: 42px;
+        background-color: $grey-300;
+      }
+
+      &-slide {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 4px solid $grey-300;
+        outline-offset: -2px;
+        
+        .btn-green {
+          position: absolute;
+          margin: auto;
+          opacity: 0;
+
+          @include on-event() {
+            color: $black;
+            background-color: $brand-color;
+            opacity: 1;
+          }
+        }
+      }
+
+      &-img {
+        max-width: 270px;
+        width: 100%;
+      }
+
+      &-pagination {
+        right: 0;
+        left: 6px;
+
+        margin-top: 37px;
+        margin-bottom: 50px;
+
+        &-bullet {
+          position: relative;
+
+          margin-right: 12px;
+          width: 7px;
+          height: 7px;
+
+          background: $brand-color;
+
+          opacity: 1;
+          outline: 0;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &-active {
+            // margin-right: 13px;
+            // margin-left: 13px;
+
+            &:after {
+              content: '';
+
+              position: absolute;
+              top: -3px;
+              right: -3px;
+              bottom: 0;
+
+              display: block;
+              width: 13px;
+              height: 13px;
+              
+              border: .5px solid $brand-color;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+//  SPECIAL SECTION 3RD
+  .section-special-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    width: 100%;
+    height: 695px;
+
+    background-color: $black;
+    background-image: url('../../assets/images/JPG/razer-nari-usp02-desktop-wireless-gaming-headset.jpg');
+    background-size: cover;
+
+    .banner-text {
+      position: relative;
+      top: -75px;
+      padding-left: 4px;
+      max-width: 407px;
+      opacity: 0;
+      transform: translateY(4em);
+      transition: 4s .25s cubic-bezier(0,1,.3,1),
+      opacity .3s .25s ease-out;
+      will-change: transform, opacity;
+
+      &.show {
+        opacity: 1;
+        transform: rotateZ(0);
+      }
+    }
+
+    .title-small {
+      margin-bottom: 23px;
+    }
+
+    .text-content {
+      font-size: 19.25px;
+      line-height: 30px;
+    }
+
+    .img-logo {
+      position: absolute;
+      bottom: -162px;
+
+      width: 138px;
+    }
+  }
+
+  .section-other-products {
+    margin-top: 85px;
+    margin-bottom: 100px;
+    
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .product {
+      &-holder {
+        margin-top: 55px;
+
+        .col-lg-3 {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      &-wrapper {
+        // flex: 0 0 25%;
+        padding-bottom: 15px;
+        max-width: 100%;
+        height: 100%;
+        background-color: $grey-250 ;
+        color: $white;
+
+        border-bottom: 2px solid $brand-color;
+      }
+
+      &-description {
+        margin-left: 12px;
+
+        a {
+          font-size: 12px;
+          letter-spacing: .25px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .title-small {
+      text-align: center;
+      margin-left: 15px;
+      margin-top: -8px;
+    }
+    
+    .description-small {
+      max-width: 210px;
+    }
+
+    .img-holder {
+      position: relative;
+
+      margin-bottom: 22px;
+
+      background-color: $black;
+
+      &:after {
+        content: '';
+
+        position: absolute;
+        right: 26px;
+        bottom: 18px;
+        
+        width: 35px;
+        height: 42px;
+        
+        background-image: url('../../assets/images/PNG/powered-by-chroma-xs.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .img-product {
+      max-width: 265px;
+      width: 100%;
+    }
+  }
+
+  .section-contact {
+    background-color: $black-100;
+    padding-top: 75px;
+    padding-bottom: 70px;
+
+    .contact-holder {
+      display: flex;
+      max-width: 975px;
+      justify-content: space-between;
+      margin: auto;
+    }
+
+    .input-text{
+      border: 1px solid $white;
+      background-color: $black-100;
+      color: $white;
+    } 
+
+    textarea {
+      background-color: $black-100;
+      border: 1px solid $white;
+      color: $white;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      margin-right: 60px;
+      margin-left: 7px;
+      max-width: 560px;
+
+      .title-small {
+        margin-bottom: 25px;
+      }
+
+      form {
+        input {
+          &:first-child {
+            margin-right: 16px;
+          }
+
+          &:nth-child(-n+2) {
+            width: 50%;
+            max-width: 223px;
+          }
+        }
+      }
+    }
+
+    .information {
+      margin: -7px -13px  0 12px;
+      width: 260px;
+
+      .title-small {
+        margin-bottom: 43px;
+
+        letter-spacing: .5px;
+      }
+
+      .text-bold-small {
+        margin-bottom: 11px;
+        color: $white;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      .description-small {
+        max-width: 150px;
+
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 600;
+
+        span {
+          display: block;
+        }
+      }
+      
+      &-holder {
+        margin-bottom: 38px;
+      }
+    }
+  }
+}
+
+
+@include respond-to(lg-up) {
+
+}
+
+//1199 - 992
+@include respond-to(lg) {
+// OKAY
+}
+
+@include respond-to(lg-down) {
+
+}
+
+@include respond-to(md-up) {
+
+}
+
+//991 - 768 
+@include respond-to(md) {
+  .home {
+    .section-banner {
+      background-position: center; 
+      .img-logo-large {
+        display: none;
+      }
+    }
+    .section-other-products {
+      .product {
+        &-wrapper {
+          padding-bottom: 15px;
+          max-width: 100%;
+          height: 100%;
+          background-color: #161415;
+          color: #fff;
+          border-bottom: 2px solid #00ce23;
+        }
+        &-holder {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+      .col-lg-3 {
+        margin-bottom: 50px;
+        max-width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .section-contact {
+      .contact-form {
+        form input:nth-child(-n+2) {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .section-contact {
+    .information {
+      .title-small {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include respond-to(md-down) {
+
+}
+
+@include respond-to(sm-up) {
+
+}
+
+//767 - 576
+@include respond-to(sm) {
+  .home {
+    .section-banner {
+      background-position: center; 
+      .img-logo-large {
+        // display: none;
+        right: -40px;
+      }
+    }
+    .section-other-products {
+      .product {
+        &-wrapper {
+          padding-bottom: 15px;
+          max-width: 100%;
+          height: 100%;
+          background-color: #161415;
+          color: #fff;
+          border-bottom: 2px solid #00ce23;
+        }
+        &-holder {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+      .col-lg-3 {
+        margin-bottom: 50px;
+        max-width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .section-contact {
+      .contact-form {
+        form input:nth-child(-n+2) {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .section-contact {
+    padding: 60px 0 35px 0;
+    .contact-form {
+      max-width: 100%;
+    }
+
+    .contact-holder {
+      display: flex;
+      flex-direction: column;
+      // flex-wrap: wrap;
+
+      .contact-form {
+        margin-right: 0;
+        margin-left: 0;
+
+        form {
+          margin: 28px 37px 37px 37px;
+          input {
+            margin-bottom: 10px;
+            max-width: 100%;
+
+            &:nth-child(-n+2) {
+              width: 100%;
+            }
+          }
+        }
+
+        textarea {
+          margin-bottom: -10px;
+          width: 100%;
+          height: 127px;
+        }
+        .title-small {
+          text-align: center;
+          margin: 0;
+
+        }
+      }
+    }
+    .information {
+      width: 100%;
+      margin: 0;
+
+      &-holder {
+        padding-left: 38px;
+        margin-bottom: 30px;
+
+        .text-bold-small {
+          font-size: 15px;
+        }
+        .description-small {
+          max-width: 100%;
+          font-size: 14px;
+          line-height: 24px;
+          margin-bottom: -13px;
+        }
+      }
+
+      .title-small {
+        text-align: center;
+      }
+    }
+  }
+      footer {
+      height: 380px;
+      padding-top: 27px;
+      background-color: $grey-300;
+    
+      .footer {
+        &-content {
+          display: flex;
+          flex-direction: column;
+          padding: 0 5px;
+          margin-bottom: 43px;
+
+          .navbar-logo {
+            height: 55px;
+            width: 171px;
+            margin-left: 32px;
+          }
+        }
+      
+        &-links {
+          display: flex;
+          flex-direction: column;
+          line-height: 18px;
+          align-items: left;
+          margin: 18px 0 12px 30px;
+          width: 80%;
+        }
+      
+        &-item {
+          font-family: "Montserrat Bold";
+          font-size: 15px;
+          letter-spacing: .25px;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          color: $grey-100;
+          max-width: 100%;
+        }
+      }
+    
+      .social-media {
+        margin-left: 30px;
+        .fab {
+          img {
+            width: 18px;
+            height: 18px;
+            margin-right: -7px;
+          }
+        }
+
+        .fab {
+          margin-right: 15px;
+          font-size: 13px;
+    
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    
+      hr {
+        height: 1px;
+        background-color: #383335;
+        width: 581px;
+        margin-left: -37px;
+      }
+    
+      .copy {
+        margin: 0 30px 0  30px;
+        padding-bottom: 15px;
+        color: $grey-100;
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+}
+
+@include respond-to(sm-down) {
+
+}
+
+//575 - 320
+@include respond-to(xs) {
+  .home {
+    .section-banner {
+
+      .banner-text {
+        margin: -49px 18px 0 18px;
+        .title-large {
+          margin-bottom: 15px;
+          font-weight: 600;
+          letter-spacing: -.35px;
+          font-size: 40px;
+          color: $white;
+        }
+        .text-content {
+          color: #b8b8b8;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: .28px;
+        }
+      }
+
+      .logo-holder {
+        width: 80%;
+        position: absolute;
+        bottom: -82px;
+      }
+
+      .img-logo:first-child {
+        margin-right: 7px;
+      }
+
+      .img-logo {
+        width: 70px;
+      }
+
+      .img-logo-large {
+        display: none;
+      }
+    }
+
+    .section-features {
+      .title-small {
+        font-size: 26px;
+        max-width: 78%;
+        margin: -25px 0 0 47px;
+      }
+
+      .text-content-small {
+        margin: 20px 20px 0 20px;
+        line-height: 25px;
+      }
+
+      .features-holder {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      
+      .feature-wrapper {
+        max-width: 90%;
+        line-height: .24;
+        flex-wrap: wrap;
+        margin: 0 26px 17px 26px;
+        margin-right: 26px;
+        margin-bottom: 17px;
+        margin-left: 26px;
+      }
+
+      .features-holder:after {
+        display: none;
+    }
+  }
+
+    // Swiper DOTSSSS
+    .section-products {
+      .swiper-pagination {
+        right: 0;
+        left: 6px;
+        margin-top: 27px;
+        margin-bottom: 27px;
+      }
+      .swiper-img {
+        max-width: 270px;
+        width: 100%;
+        outline: 3px solid $grey-300;
+        outline-offset: -2px;
+        display: block;
+        position: relative;
+      }
+      .swiper-img::after {
+        content: "";
+        background-color: red;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+  // THX SPATAL AUDIO MOBILE
+  .section-special-feature {
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 67px;
+    width: 100%;
+    height: 421px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../../assets/images/PNG/6.jpg);
+
+    .text-content {
+      line-height: 25px;
+      font-size: 16px;
+      margin-left: 28px;
+    }
+    .img-logo {
+      display: none;
+    }
+
+    .banner-text {
+      top: 0;
+
+    }
+    .title-small {
+      margin: 25px 0 20px 28px;
+    }
+  }
+  
+  // EXPLORE OTHER PRODUCTS MOBILE
+    .section-other-products {
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .title-small {
+        margin: -13px 0 -8px 0px;
+      }
+
+      .col-lg-3 {
+        margin-bottom: 27px;
+
+        .product-wrapper {
+          margin: 0 23px 7px 23px;
+          padding-bottom: 10px;
+          max-width: 100%;
+          height: 100%;
+          background-color: #161415;
+          color: #fff;
+          border-bottom: 3px solid #00ce23;
+
+          .product-description {
+            .text-bold-small {
+              font-size: 15px;
+              letter-spacing: 1px;
+              margin-bottom: 7px;
+            }
+          }
+        }
+      }
+
+      .col-lg-3:nth-child(n+3) {
+        display: none;
+      }
+    }
+
+    // ASK A QUESTION MOBILE
+    .section-contact {
+      padding: 60px 0 35px 0;
+      .contact-form {
+        max-width: 100%;
+      }
+
+      .contact-holder {
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+
+        .contact-form {
+          margin-right: 0;
+          margin-left: 0;
+
+          form {
+            margin: 28px 37px 37px 37px;
+            input {
+              margin-bottom: 10px;
+              max-width: 100%;
+
+              &:nth-child(-n+2) {
+                width: 100%;
+              }
+            }
+          }
+
+          textarea {
+            margin-bottom: -10px;
+            width: 100%;
+            height: 127px;
+          }
+          .title-small {
+            text-align: center;
+            margin: 0;
+
+          }
+        }
+      }
+
+      // INFORMATION
+      .information {
+        width: 100%;
+        margin: 0;
+
+        &-holder {
+          padding-left: 38px;
+          margin-bottom: 30px;
+
+          .text-bold-small {
+            font-size: 15px;
+          }
+          .description-small {
+            max-width: 100%;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: -13px;
+          }
+        }
+
+        .title-small {
+          text-align: center;
+        }
+      }
+    }
+  }
+  // FOOTER MOBILE
+    footer {
+      height: 380px;
+      padding-top: 27px;
+      background-color: $grey-300;
+    
+      .footer {
+        &-content {
+          display: flex;
+          flex-direction: column;
+          padding: 0 5px;
+          margin-bottom: 43px;
+
+          .navbar-logo {
+            height: 55px;
+            width: 171px;
+            margin-left: 32px;
+          }
+        }
+      
+        &-links {
+          display: flex;
+          flex-direction: column;
+          line-height: 18px;
+          align-items: left;
+          margin: 18px 0 12px 30px;
+          width: 80%;
+        }
+      
+        &-item {
+          font-family: "Montserrat Bold";
+          font-size: 15px;
+          letter-spacing: .25px;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          color: $grey-100;
+          max-width: 100%;
+        }
+      }
+    
+      .social-media {
+        margin-left: 30px;
+        .fab {
+          img {
+            width: 18px;
+            height: 18px;
+            margin-right: -7px;
+          }
+        }
+
+        .fab {
+          margin-right: 15px;
+          font-size: 13px;
+    
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    
+      hr {
+        height: 1px;
+        background-color: #383335;
+        width: 397px;
+        margin-left: -37px;
+      }
+    
+      .copy {
+        margin: 0 30px 0  30px;
+        padding-bottom: 15px;
+        color: $grey-100;
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+}
+
+// 575 - 320
+@include respond-to(xs) {
+  .home {
+    .section-banner {
+      background-position: center;
+      height: 610px;
+
+      .banner-text {
+        margin: -49px 18px 0 18px;
+        .title-large {
+          margin-bottom: 15px;
+          font-weight: 600;
+          letter-spacing: -.35px;
+          font-size: 40px;
+          color: $white;
+        }
+        .text-content {
+          color: #b8b8b8;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: .28px;
+        }
+      }
+
+      .logo-holder {
+        width: 80%;
+        position: absolute;
+        bottom: -82px;
+      }
+
+      .img-logo:first-child {
+        margin-right: 7px;
+      }
+
+      .img-logo {
+        width: 70px;
+      }
+
+      .img-logo-large {
+        display: none;
+      }
+    }
+
+    .section-features {
+      .title-small {
+        font-size: 26px;
+        max-width: 78%;
+        margin: -25px 0 0 47px;
+      }
+
+      .text-content-small {
+        margin: 20px 20px 0 20px;
+        line-height: 25px;
+      }
+
+      .features-holder {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        .description {
+          max-width: 100%;
+        }
+      }
+      
+      .feature-wrapper {
+        max-width: 90%;
+        line-height: .24;
+        flex-wrap: wrap;
+        margin: 0 26px 17px 26px;
+      }
+
+      .features-holder:after {
+        display: none;
+    }
+  }
+
+    // Swiper DOTSSSS
+    .section-products {
+      .swiper-pagination {
+        right: 0;
+        left: 6px;
+        margin-top: 27px;
+        margin-bottom: 27px;
+      }
+      .swiper-img {
+        max-width: 270px;
+        width: 100%;
+        outline: 3px solid $grey-300;
+        outline-offset: -2px;
+        display: block;
+        position: relative;
+      }
+      .swiper-img::after {
+        content: "";
+        background-color: red;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+  // THX SPATAL AUDIO MOBILE
+  .section-special-feature {
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 67px;
+    width: 100%;
+    height: 421px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../../assets/images/PNG/6.jpg);
+
+    .text-content {
+      line-height: 25px;
+      font-size: 16px;
+      margin-left: 28px;
+    }
+    .img-logo {
+      display: none;
+    }
+
+    .banner-text {
+      top: 0;
+
+    }
+    .title-small {
+      margin: 25px 0 20px 28px;
+    }
+  }
+  
+  // EXPLORE OTHER PRODUCTS MOBILE
+    .section-other-products {
+      .img-product {
+        max-width: 100%;
+        justify-content: center;
+      }
+      
+      .title-small {
+        margin-top: -13px;
+        bottom: -8px;
+        
+      }
+
+      .col-lg-3 {
+        margin-bottom: 27px;
+
+        .product-wrapper {
+          margin-right: 23px;
+          margin-bottom: 7px;
+          margin-left: 23px;
+          padding-bottom: 10px;
+          max-width: 100%;
+          height: 100%;
+          background-color: #161415;
+          color: #fff;
+          border-bottom: 3px solid #00ce23;
+
+          .product-description {
+            .text-bold-small {
+              font-size: 15px;
+              letter-spacing: 1px;
+              margin-bottom: 7px;
+            }
+          }
+        }
+      }
+
+      .col-lg-3:nth-child(n+3) {
+        display: none;
+      }
+    }
+
+    // ASK A QUESTION MOBILE
+    .section-contact {
+      padding-top: 60px;
+      padding-bottom: 35px;
+      .contact-form {
+        max-width: 100%;
+      }
+
+      .contact-holder {
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+
+        .contact-form {
+          margin-right: 0;
+          margin-left: 0;
+
+          form {
+            margin-top: 28px;
+            margin-right: 37px;
+            margin-bottom: 37px;
+            margin-left: 37px;
+            input {
+              margin-bottom: 10px;
+              max-width: 100%;
+
+              &:nth-child(-n+2) {
+                width: 100%;
+              }
+            }
+          }
+
+          textarea {
+            margin-bottom: -10px;
+            width: 100%;
+            height: 127px;
+          }
+          .title-small {
+            text-align: center;
+            margin: 0;
+
+          }
+        }
+      }
+
+      // INFORMATION
+      .information {
+        width: 100%;
+        margin: 0;
+
+        &-holder {
+          padding-left: 38px;
+          margin-bottom: 30px;
+
+          .text-bold-small {
+            font-size: 15px;
+          }
+          .description-small {
+            max-width: 100%;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: -13px;
+          }
+        }
+
+        .title-small {
+          text-align: center;
+        }
+      }
+    }
+  }
+  // FOOTER MOBILE
+    footer {
+      height: 380px;
+      padding-top: 27px;
+      background-color: $grey-300;
+    
+      .footer {
+        &-content {
+          display: flex;
+          flex-direction: column;
+          padding: 0 5px;
+          margin-bottom: 43px;
+
+          .navbar-logo {
+            height: 55px;
+            width: 171px;
+            margin-left: 32px;
+          }
+        }
+      
+        &-links {
+          display: flex;
+          flex-direction: column;
+          line-height: 18px;
+          align-items: left;
+          margin: 18px 0 12px 30px;
+          width: 80%;
+        }
+      
+        &-item {
+          font-family: "Montserrat Bold";
+          font-size: 15px;
+          letter-spacing: .25px;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          color: $grey-100;
+          max-width: 100%;
+        }
+      }
+    
+      .social-media {
+        margin-left: 30px;
+        .fab {
+          img {
+            width: 18px;
+            height: 18px;
+            margin-right: -7px;
+          }
+        }
+
+        .fab {
+          margin-right: 15px;
+          font-size: 13px;
+    
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    
+      hr {
+        height: 1px;
+        background-color: #383335;
+        width: auto;
+        margin-left: -37px;
+      }
+    
+      .copy {
+        margin: 0 30px 0  30px;
+        padding-bottom: 15px;
+        color: $grey-100;
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+}
+

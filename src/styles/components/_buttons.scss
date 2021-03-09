@@ -1,0 +1,112 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &-green {
+    padding: 12px 25px;
+    margin-right: 7px;
+    width: 148px;
+
+    font-size: 10px;
+    letter-spacing: 1.25px;
+    color: $grey-200;
+    font-weight: 600;
+    text-align: center;
+    
+    background-color: $brand-color;
+    border: 1px solid $brand-color;
+    border-radius: 30px;
+
+    // transition: all .2s ease-in-out;
+
+    @include on-event() {
+      color: $brand-color;
+      background-color: transparent;
+    }
+  }
+}
+
+// @media screen and (max-width: 500px) {
+//   .header {
+//     .btn {
+//       text-align: center;
+//     }
+    
+//     .btn-green {
+//       font-size: 18px;
+//       padding: 20px 0 20px 0;
+//       width: 300px;
+//       margin: 50px 0 0 90px;
+//     }
+//   }
+// }
+
+@include respond-to(xs) {
+  .header {
+    .navbar {
+      &-collapse {
+        .header-button {
+          margin-top: 30px;
+          text-align: center;
+          .btn {
+            &-green {
+              padding: 24px 50px;
+              margin-right: 7px;
+              width: 330px;
+
+              font-size: 20px;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.home {
+  .section-other-products {
+    .product-button {
+      margin-top: 20px;
+      margin-bottom: -30px;
+      text-align: center;
+
+      .btn-green {
+        font-size: 10px;
+        letter-spacing: 1.25px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+//767 - 576
+@include respond-to(sm) {
+  .header {
+    .navbar {
+      &-collapse {
+        .header-button {
+          margin-top: 30px;
+          text-align: center;
+          .btn {
+            &-green {
+              padding: 24px 50px;
+              margin-right: 7px;
+              width: 330px;
+
+              font-size: 20px;
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

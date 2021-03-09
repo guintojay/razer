@@ -1,0 +1,445 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+header {
+  background-color: $grey-300;
+}
+
+.header {
+  .btn {
+    margin-right: -6px;
+
+    &-btn-green {
+      background-color: $brand-color;
+      border-radius: 50px;
+      padding: 12px 40px;
+      font-size: 10px;
+      color: $black;
+      text-transform: uppercase;
+    }
+  }
+  
+  &-dropdown {
+    position: relative;
+    
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: 10px;
+      right: -5px;
+      
+      width: 8px;
+      height: 8px;
+      
+      border-right: 2px solid $grey-100;
+      border-bottom: 2px solid $grey-100;
+      transform: rotate(45deg);
+    }
+
+    //links
+    &-link {
+      color: $grey-100;
+      font-size: 15px;
+      white-space: pre;
+      text-align: center;
+      padding: 20px;
+    }
+
+    &.rotate {
+      &:after {
+        top: 15px;
+        transform: rotate(225deg);
+      }
+    }
+
+    //list
+    &-list {
+      position: absolute;
+      list-style: none;
+      right: -100px;
+      top: 50px;
+      background-color: $black;
+      z-index: 1;
+      display: block;
+      width: 225px;
+      height: 260px;
+      padding-inline-start: 0;
+      &.show {
+        display: block;
+      }
+    }
+
+    &-holder {
+      display: none;
+    }
+
+    &-item {
+      padding: 10px;
+      
+      @include on-event() {
+        color: $black;
+        text-decoration: none;
+      }
+    }
+
+    &-menu {
+      display: none;
+      
+    }
+  }
+}
+
+.submenu {
+  position: relative;
+
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    
+    width: 8px;
+    height: 8px;
+    
+    border-right: 2px solid $grey-100;
+    border-bottom: 2px solid $grey-100;
+    
+    transform: rotate(-45deg);
+  }
+
+  .header-dropdown--list {
+    padding-inline-start: 0;
+    position: absolute;
+    top: 0;
+    right: -225px;
+    width: 225px;
+    height: 92px;
+    border: 1px solid $black-100;
+    list-style: none;
+    display: none;
+    background-color: $black;
+    &.show {
+      display: block;
+    }
+  }
+}
+
+.navbar {
+  height: 71px;
+  
+  &-brand {
+    margin-left: 5px;
+  }
+
+  &-logo {
+    width: 170px;
+    height: auto;
+    margin-left: 4px;
+  }
+
+  &-nav {
+    padding-top: 3px;
+    margin-right: 35px;
+  }
+
+  .icon-bar {
+    background-color: $grey-100;
+    border-radius: 10px;
+  }
+}
+
+.nav {
+  &-item {
+    display: inline-block;
+    margin-right: 27px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .55px;
+    text-transform: uppercase;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &-link:nth-child(2) {
+    margin-right: 15px;
+  }
+
+  &-link {
+    color: $grey-100;
+    margin-right: 5px;
+    @include on-event() {
+      color: $brand-color;
+    }
+  }
+}
+
+
+
+@include respond-to(lg-up) {
+
+}
+
+//1199 - 992
+@include respond-to(lg) {
+
+}
+
+@include respond-to(lg-down) {
+
+}
+
+@include respond-to(md-up) {
+
+}
+
+//991 - 768 
+@include respond-to(md) {
+  .header {
+    .btn {
+      display: none;
+    }
+  }
+}
+
+@include respond-to(md-down) {
+
+}
+
+@include respond-to(sm-up) {
+
+}
+
+//767 - 576
+@include respond-to(sm) {
+
+
+}
+
+@include respond-to(sm-down) {
+  .header {
+
+    &-dropdown {
+      position: relative;
+      
+      .fa-chevron-right {
+        float: right;
+        margin-top: 12px;
+      }
+
+      &:after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  .navbar {
+    
+    &-collapse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgb(0, 0, 0);
+
+      .menu-close {
+        color: $grey-100;
+        font-weight: 600;
+        padding-bottom: 50px;
+        margin-top: 25px;
+        margin-left: 25px;
+        font-size: 27px;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        div {
+          cursor: pointer;
+          
+          .fa-times {
+            float: right;
+          }
+        }
+      }
+    }
+
+    .header-dropdown {
+      &-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        // margin-top: 90px;
+        background-color: black;
+        display: block;
+
+        &.show {
+          z-index: 2;
+        }
+
+        .submenu-close {
+          div 
+          {
+            .fa-times {
+              float: right;
+            }
+            .fa-chevron-left {
+              margin-left: -20px;
+              margin-right: 20px;
+            }
+            margin-right: 30px;
+          }
+
+          font-size: 27px;
+          font-weight: 300;
+          margin-top: 25px;
+          margin-left: 45px;
+          margin-bottom: 50px;
+          
+        }
+      }
+
+      &-item {
+        background-color: $black;
+        // padding: 20px;
+      }
+
+      &-link {
+        // font-weight: 300;
+         font-size: 25px;
+         line-height: 50px;
+         padding: 20px;
+
+         @include on-event() {
+          color: $brand-color;
+        }
+      }
+
+      &-holder {
+        display: none;
+      }
+    }
+
+  .header {
+    &-btn-green{
+      text-align: center;
+    }
+  }
+  
+  .nav-link {
+    margin-left: 30px;
+    
+    font-size: 25px;
+    line-height: 50px;
+  }
+}
+
+.navbar {
+  height: 58px;
+  &-brand {
+    margin-left: 5px;
+  }
+
+  &-logo {
+    width: 116px;
+    height: auto;
+    margin-left: 6px;
+  }
+}
+
+.nav {
+  &-item {
+    display: inline-block;
+    margin-right: 27px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .55px;
+    text-transform: uppercase;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-link:nth-child(2) {
+    margin-right: 15px;
+  }
+
+  &-link {
+    color: $grey-100;
+    margin-right: 2px;
+    @include on-event() {
+      color: $brand-color;
+    }
+  }
+}
+
+  .submenu {
+    position: relative;
+    .fa-chevron-right {
+      float: right;
+      margin-top: 12px;
+    }
+    
+    &:after {
+      content: '';
+      display: none;
+    }
+
+
+    .header-dropdown--list {
+      // padding-top: 100px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      
+  
+      &-item {
+        padding: 25px;
+        background-color: $black;
+      }
+  
+      .submenu-close1 {
+        div {
+           margin-right: 30px;
+          .fa-times {
+            float: right;
+          }
+          .fa-chevron-left {
+            margin-left: -20px;
+            margin-right: 20px;
+          }
+        }
+        color: $grey-100;
+        font-size: 27px;
+        font-weight: 300;
+        margin-top: 20px;
+        margin-left: 45px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+//575 - 320
+
+@include respond-to(xs) {
+  
+}
